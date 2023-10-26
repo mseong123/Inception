@@ -1,0 +1,15 @@
+services:
+  nginx:
+    build: ./requirements/nginx/
+    image: nginx
+    ports:
+      - "443:443"
+  mariadb:
+    build: ./requirements/mariadb/
+    image: mariadb
+    ports:
+      - "9000:9000"
+    environment:
+      - MARIADB_USER=${MARIADB_USER}
+      - MARIADB_PASSWORD=${MARIADB_PASSWORD}
+      - MARIA_DATABASE=${MARIADB_DATABASE}
