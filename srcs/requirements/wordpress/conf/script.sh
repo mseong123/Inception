@@ -1,34 +1,13 @@
 #!/bin/bash
 
 
-
-# create directory to use in nginx container later and also to setup the wordpress conf
-mkdir /var/www/
-mkdir /var/www/html
-
-cd /var/www/html
-
-
-rm -rf *
-
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar 
 
 chmod +x wp-cli.phar 
 
 mv wp-cli.phar /usr/local/bin/wp
 
-
 wp core download --allow-root
-
-#mv /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
-
-#mv /wp-config.php /var/www/html/wp-config.php
-
-
-#sed -i -r "s/db1/$WP_DB/1"   wp-config.php
-#sed -i -r "s/user/$WP_DB_USER/1"  wp-config.php
-#sed -i -r "s/pwd/$WP_DB_PASSWORD/1"    wp-config.php
-
 wp config create --dbname=$WP_DB --dbuser=$WP_DB_USER --dbpass=$WP_DB_PASSWORD --dbhost=$WP_DB_HOST --dbcharset="utf8" --dbcollate="utf8_general_ci" --allow-root --debug
 wp core install --url=$DOMAIN_NAME/ --title=$WP_TITLE --admin_user=$WP_ADMIN_USR --admin_password=$WP_ADMIN_PWD --admin_email=$WP_ADMIN_EMAIL --skip-email --allow-root
 
