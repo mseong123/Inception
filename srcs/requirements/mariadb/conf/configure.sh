@@ -5,7 +5,7 @@ if [ ! -d "/run/mysqld" ]; then
 	chown -R mysql:mysql /run/mysqld
 fi
 
-if [ ! -d "/var/lib/mysql/mysql" ]; then
+#if [ ! -d "/var/lib/mysql/mysql" ]; then
 	
 	chown -R mysql:mysql /var/lib/mysql
 
@@ -38,9 +38,9 @@ EOF
 	# run init.sql
 	mysqld --user=mysql --bootstrap < $tfile
 	rm -f $tfile
-fi
+#fi
 
-# allow remote connections
+#allow remote connections
 #sed -i "s|skip-networking|# skip-networking|g" /etc/my.cnf.d/mariadb-server.cnf
 #sed -i "s|.*bind-address\s*=.*|bind-address=0.0.0.0|g" /etc/my.cnf.d/mariadb-server.cnf
 
