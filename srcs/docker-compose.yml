@@ -2,14 +2,28 @@ services:
   nginx:
     build: ./requirements/nginx/
     image: nginx
+    networks:
+      - inception
     ports:
       - "443:443"
   mariadb:
     build: ./requirements/mariadb/
     image: mariadb
-    ports:
-      - "9000:9000"
-    environment:
-      - MARIADB_USER=${MARIADB_USER}
-      - MARIADB_PASSWORD=${MARIADB_PASSWORD}
-      - MARIA_DATABASE=${MARIADB_DATABASE}
+    env_file:
+      - .env
+    networks:
+      - inception
+    restart: always
+  wordpress:
+    build: ./requirements/wordpress/
+    image: wordpress
+    restart: always
+    env_file:
+      - .env
+    networks:
+      - inception
+
+networks:
+  inception:
+
+
