@@ -46,9 +46,11 @@ wp theme install astra --activate --allow-root
 
 wp plugin update --all --allow-root
 
-
+mkdir /usr/log
+touch /usr/log/www.access.log
  
-sed -i 's/listen = \/run\/php\/php7.3-fpm.sock/listen = 9000/g' /etc/php/7.3/fpm/pool.d/www.conf
+sed -i 's/listen = \/run\/php\/php7.3-fpm.sock/listen = 0.0.0.0:9000/g' /etc/php/7.3/fpm/pool.d/www.conf
+sed -i 's/;access.log = log\/$pool.access.log/access.log = log\/$pool.access.log/g' /etc/php/7.3/fpm/pool.d/www.conf
 #sed -i 's/user = www-data/user = nginx/g' /etc/php/7.3/fpm/pool.d/www.conf
 #sed -i 's/group = www-data/group = nginx/g' /etc/php/7.3/fpm/pool.d/www.conf
 
