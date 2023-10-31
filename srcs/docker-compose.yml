@@ -8,6 +8,8 @@ services:
       - "443:443"
     depends_on:
       - wordpress
+    volumes:
+      - wp:/var/www/html
   mariadb:
     build: ./requirements/mariadb/
     image: mariadb
@@ -26,8 +28,21 @@ services:
       - inception
     depends_on:
       - mariadb
+    volumes:
+      - wp:/var/www/html
 
 networks:
   inception:
 
+volumes:
+  wp:
+    name: wp
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/melee/data
+  
+    
+    
 
