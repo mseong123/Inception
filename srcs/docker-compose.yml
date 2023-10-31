@@ -1,3 +1,6 @@
+networks:
+  inception:
+
 services:
   nginx:
     build: ./requirements/nginx/
@@ -31,8 +34,6 @@ services:
     volumes:
       - wp:/var/www/html
 
-networks:
-  inception:
 
 volumes:
   wp:

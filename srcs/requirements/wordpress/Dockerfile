@@ -7,8 +7,8 @@ RUN sed -i 's/;access.log = log\/$pool.access.log/access.log = log\/$pool.access
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 RUN chmod +x wp-cli.phar
 RUN mv wp-cli.phar /usr/local/bin/wp
-RUN wp core download --version=5.6.2 --allow-root
-RUN mkdir /run/php mkdir /usr/log && touch /usr/log/www.access.log
+RUN wp core download --allow-root
+RUN mkdir /run/php && mkdir /usr/log && touch /usr/log/www.access.log
 COPY ./conf/script.sh /
 CMD ["/script.sh"]
 
