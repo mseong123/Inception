@@ -10,6 +10,5 @@ RUN mv wp-cli.phar /usr/local/bin/wp
 RUN wp core download --allow-root
 RUN mkdir /run/php && mkdir /usr/log && touch /usr/log/www.access.log
 COPY ./conf/script.sh /
-#COPY ./conf/wp-config.php /var/www/html/
 CMD ["/script.sh"]
 
