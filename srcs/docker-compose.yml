@@ -17,6 +17,7 @@ volumes:
       o: bind
       device: /home/melee/data/db
 
+
 services:
   nginx:
     build: ./requirements/nginx/
@@ -52,6 +53,14 @@ services:
       - mariadb
     volumes:
       - wp:/var/www/html
+  redis:
+    build: ./requirements/bonus/redis/
+    image: redis
+    restart: always
+    depends_on:
+      - wordpress
+    networks:
+      - inception
 
 
   
