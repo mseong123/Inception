@@ -8,14 +8,14 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /home/melee/data
+      device: /home/melee/data/wp
   db:
     name: db
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /home/melee/data
+      device: /home/melee/data/db
 
 services:
   nginx:
