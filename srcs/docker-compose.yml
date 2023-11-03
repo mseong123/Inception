@@ -76,6 +76,12 @@ services:
       - "21100-21110:21100-21110"
     env_file:
       - .env
+  site:
+    build: ./requirements/bonus/site/
+    image: site
+    restart: always
+    ports:
+      - "3000:3000"
 
 
 
