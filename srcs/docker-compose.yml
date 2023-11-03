@@ -61,6 +61,22 @@ services:
       - wordpress
     networks:
       - inception
+  ftp:
+    build: ./requirements/bonus/ftp/
+    image: ftp
+    restart: always
+    depends_on:
+      - wordpress
+    networks:
+      - inception
+    volumes:
+      - wp:/home/${FTP_USER}
+    ports:
+      - "21:21"
+      - "21100-21110:21100-21110"
+    env_file:
+      - .env
+
 
 
   
