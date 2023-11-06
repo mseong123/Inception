@@ -92,6 +92,14 @@ services:
       - mariadb
     networks:
       - inception
+  prometheus:
+    build: ./requirements/bonus/prometheus/
+    image: prometheus
+    restart: always
+    ports:
+      - "9090:9090"
+    networks:
+      - inception
 
 
 
