@@ -48,5 +48,5 @@ git clone https://github.com/mseong123/Inception.git
 cd Inception
 make
 ```
-This will automatically set up all above services and run them. Use `docker ps` to see if all processes are up.
+This will automatically set up all above services and run them. Run `docker ps` in your shell/bash terminal to see if all processes are up.
 
