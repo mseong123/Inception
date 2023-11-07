@@ -21,4 +21,4 @@ Set up additional services:
  - Adminer
  - Service of your choice (I chose Prometheus which is a container monitoring service which can be accessed using a browser front end client)
 
-*The project requires that we configure the Docker Image **MANUALLY** without using ready-made images in docker hub. This requires in-depth understanding of the installation process of the services and relevant config files to make it work!
+*The project requires that we configure the Docker Image <ins>**MANUALLY**</ins> without using ready-made images in docker hub. This requires in-depth understanding of the installation process of the services and relevant config files to make it work!
