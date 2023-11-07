@@ -19,8 +19,8 @@ Set up the following services :
 Set up additional services:
  - Redis
  - FTP-server (vsftpd for linux)
- - Server hosting own website (not using php)
- - Adminer
+ - Server hosting own website (using nodejs webserver and runtime environment)
+ - Adminer (mysql/postgres/mariadb web GUI interface)
  - Service of your choice (I chose Prometheus which is a container monitoring service which can be accessed using a browser front end client)
 
 > The project requires that we configure the Docker Image <ins>**MANUALLY**</ins> without using ready-made images in docker hub. This requires in-depth understanding of the installation process of the services and relevant config files to make it work!
@@ -47,7 +47,27 @@ git clone https://github.com/mseong123/Inception.git
 cd Inception
 make
 ```
-This will automatically set up all above services and run them. Run `docker ps` in your shell/bash terminal to see if all processes are up.
+This will automatically build all Docker Images, set up all above container services and run them. Run `docker ps` in your shell/bash terminal to see if all processes are up.
+
+## To run MANDATORY
+- Type in `https://melee.42.fr:443` in your web browser. (https://localhost:443 works too). You will see a configured wordpress site up and running. *NGINX is built using a self-signed certificate hence just click proceed when the browser shows an unsafe warning.
+- To login as a wordpress user (to modify and insert content) navigate to `https://melee.42.fr/wp-login.php` (username and password in .env file)
+- To login as a wordpress admin, follow same step above (username and password in .env file)
+
+## To run BONUS
+- Redis is installed as part of command make. You will see the plugin installed and activated when you log into wordpress as administrator under plugins tab.
+- vsftpd (very secure ftp daemon) can be accessed using lftp (apt-get install lftp). After installation, in bash/shell cmd line type `lftp 127.0.0.1:21 -u "mseong"`. Password is in the .env file. Then in lftp prompt type `ls -la` to list out files. Type `put <file>` to upload files.
+- For server hosting own website, you can access it by typing `http://localhost:3000` in your web browser.
+- For adminer, you can access it by typing `http://localhost:8080/adminer.php` in your web browser. In the login page, host is `mariadb`. Username and password is in .env file (under mariadb) and database is `wordpress`.
+- For prometheus, you can access it by typing `http://localhost:9090`.
+
+## Stop containers
+- In the root folder (with Makefile) type `make stop`
+
+## Restart containers
+- In the root folder (with Makefile) type `make restart`
+
+## 
 
 
 
