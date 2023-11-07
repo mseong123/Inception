@@ -7,6 +7,8 @@ This project aims to broaden knowledge of system administration by using Docker.
 - docker network
 - .env file
 
+See [`Subject PDF`](https://github.com/mseong123/Inception/blob/c095a627ac47e1bdff7e11e13b3ff30b54579a4d/en.subject.pdf) link.
+
 ### Mandatory
 Set up the following services :
  - NGINX
