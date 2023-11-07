@@ -59,7 +59,7 @@ This will automatically build all Docker Images, set up all above container serv
 - vsftpd (very secure ftp daemon) can be accessed using lftp (apt-get install lftp). After installation, in bash/shell cmd line type `lftp 127.0.0.1:21 -u "mseong"`. Password is in the .env file. Then in lftp prompt type `ls -la` to list out files. Type `put <file>` to upload files.
 - For server hosting own website, you can access it by typing `http://localhost:3000` in your web browser.
 - For adminer, you can access it by typing `http://localhost:8080/adminer.php` in your web browser. In the login page, host is `mariadb`. Username and password is in .env file (under mariadb) and database is `wordpress`.
-- For prometheus, you can access it by typing `http://localhost:9090`.
+- For prometheus, you can access it by typing `http://localhost:9090` in your web browser.
 
 ## Stop containers
 - In the root folder (with Makefile) type `make stop`
@@ -67,7 +67,8 @@ This will automatically build all Docker Images, set up all above container serv
 ## Restart containers
 - In the root folder (with Makefile) type `make restart`
 
-## 
+## Stop and remove all Docker containers and images
+- In the root folder (with Makefile) type `make clean`
 
 
 
