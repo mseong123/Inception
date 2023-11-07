@@ -40,7 +40,7 @@ Docker can build images automatically by reading the instructions from a Dockerf
 Validated 6/11/2023. Grade: 125%. Project duration: 2 weeks.
 
 ## Installation and setup
-- Install docker. [Installation process](https://docs.docker.com/engine/install/)
+- Install docker. [Installation instructions](https://docs.docker.com/engine/install/)
 - Clone this repository:
 ```
 git clone https://github.com/mseong123/Inception.git
