@@ -5,14 +5,20 @@ This project aims to broaden knowledge of system administration by using Docker.
 - docker-compose
 - docker volumes
 - docker network
-- .env environmental variable
+- .env file
 
 ### Mandatory
 Set up the following services :
  - NGINX
- - Wordpress (phpfpm)
- - MariaDB database
+ - Wordpress (php-fpm)
+ - MariaDB server
 
-### Mandatory
+### Bonus
+Set up additional services:
+ - REDIS
+ - FTP-server (vsftpd for linux)
+ - Server hosting own website (not using php)
+ - Adminer
+ - Service of your choice (I chose Prometheus which is a container monitoring service which can be accessed using a browser front end client)
 
 *The project requires that we configure the Docker Image **MANUALLY** without using ready-made images in docker hub. This requires in-depth understanding of the installation process of the services and relevant config files to make it work!
