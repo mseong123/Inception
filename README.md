@@ -15,7 +15,7 @@ Set up the following services :
 
 ### Bonus
 Set up additional services:
- - REDIS
+ - Redis
  - FTP-server (vsftpd for linux)
  - Server hosting own website (not using php)
  - Adminer
