@@ -23,7 +23,7 @@ Set up additional services:
  - Adminer
  - Service of your choice (I chose Prometheus which is a container monitoring service which can be accessed using a browser front end client)
 
-*The project requires that we configure the Docker Image <ins>**MANUALLY**</ins> without using ready-made images in docker hub. This requires in-depth understanding of the installation process of the services and relevant config files to make it work!
+> The project requires that we configure the Docker Image <ins>**MANUALLY**</ins> without using ready-made images in docker hub. This requires in-depth understanding of the installation process of the services and relevant config files to make it work!
 ## Definitions
 ### What is a docker ?
 Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. By taking advantage of Docker’s methodologies for shipping, testing, and deploying code quickly, you can significantly reduce the delay between writing code and running it in production.
