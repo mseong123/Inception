@@ -35,3 +35,18 @@ Compose is a tool for defining and running multi-container Docker applications. 
 
 ### What is a docker-file ?
 Docker can build images automatically by reading the instructions from a Dockerfile. A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build users can create an automated build that executes several command-line instructions in succession.
+
+## Status
+
+Validated 6/11/2023. Grade: 125%. Project duration: 2 weeks.
+
+## Installation and setup
+- Install docker. [Installation process](https://docs.docker.com/engine/install/)
+- Clone this repository:
+```
+git clone https://github.com/mseong123/Inception.git
+cd Inception
+make
+```
+This will automatically set up all above services and run them. Use `docker ps` to see if all processes are up.
+
